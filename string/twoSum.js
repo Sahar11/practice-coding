@@ -31,7 +31,19 @@ function twoSum(nums, target) {
 // const numsWithIndex = nums.map((num, index) => [num, index]);
 // console.log(numsWithIndex);
 
+// Another solution
 
+function twoSum(numbers, target){
+  let piggyBank = {};
+
+  for(let i =0; i < numbers.length; i++){
+    let currentNumber = numbers[i];
+    let numbersWeNeed = target - currentNumber;
+    if(piggyBank[numbersWeNeed] !== undefined) {
+      return [piggyBank[numberWeNeed], i]
+    }
+  }
+}
 
 
 // Testing

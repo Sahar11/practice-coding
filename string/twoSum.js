@@ -1,4 +1,4 @@
-function twoSum(nums, target) {
+// function twoSum(nums, target) {
 
   // Brute force
   // for(let i=0; i < nums.length; i++) {
@@ -10,24 +10,24 @@ function twoSum(nums, target) {
   // }
 
   //Two pointers
-  const numsWithIndex = nums.map((num, index) => [num, index]);
-  console.log(numsWithIndex);
-  let left = 0;
-  let right = nums.length - 1;
-  while (left < right) {
-    const sum = nums[left] + nums[right];
-    if (sum === target) {
-      return [left, right];
-    }
-    if (sum > target) {
-      right--;
-    }
-    else {
-      left++;
-    }
-  }
-  return []
-}
+//   const numsWithIndex = nums.map((num, index) => [num, index]);
+//   console.log(numsWithIndex);
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     const sum = nums[left] + nums[right];
+//     if (sum === target) {
+//       return [left, right];
+//     }
+//     if (sum > target) {
+//       right--;
+//     }
+//     else {
+//       left++;
+//     }
+//   }
+//   return []
+// }
 // const numsWithIndex = nums.map((num, index) => [num, index]);
 // console.log(numsWithIndex);
 
@@ -37,12 +37,17 @@ function twoSum(numbers, target){
   let piggyBank = {};
 
   for(let i =0; i < numbers.length; i++){
-    let currentNumber = numbers[i];
-    let numbersWeNeed = target - currentNumber;
+    let currentNumber = numbers[i]; //2, 7
+    console.log("currentNumber ", currentNumber)
+    let numbersWeNeed = target - currentNumber; //7, 2 
+    console.log("numbersWeNeed ",numbersWeNeed)
     if(piggyBank[numbersWeNeed] !== undefined) {
-      return [piggyBank[numberWeNeed], i]
+      console.log("piggyBank[numbersWeNeed] ",piggyBank[numbersWeNeed])
+      return [piggyBank[numbersWeNeed], i]
     }
+    piggyBank[currentNumber] = i;
   }
+  return [];
 }
 
 

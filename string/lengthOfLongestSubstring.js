@@ -1,5 +1,5 @@
 function lengthOfLongestSubstring(s) {
-  // Initialise an array to store the running characters and a longest string length variable
+  // Initialize an array to store the running characters and a longest string length variable
   let currentString = [];
   let longestStringLength = 0;
 
@@ -7,7 +7,7 @@ function lengthOfLongestSubstring(s) {
   for (let i = 0; i < s.length; i++) {
     // Attempt to get the current character's position in the current string
     const currentCharacterPosition = currentString.indexOf(s[i]);
-
+   console.log(currentCharacterPosition)
     // Check if the current character exists in the current string
     if (currentCharacterPosition !== -1) {
       // Chop the array off after the occurence of the character
